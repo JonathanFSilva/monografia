@@ -42,7 +42,7 @@
 \renewcommand{\backref}{}
 
 % Define as listas de item compactas (sem espaçamento entre os itens)
-% \setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 % Define os textos da citação
 \renewcommand*{\backrefalt}[4]{%
@@ -253,9 +253,12 @@
 \newlistof{listofquadros}{loq}{\listofquadrosname}
 \newlistentry{quadro}{loq}{0}
 
+\setfloatadjustment{quadro}{\centering}
 \counterwithout{quadro}{chapter}
 \renewcommand{\cftquadroname}{\quadroname\space}
 \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+
+\setfloatlocations{quadro}{hbtp}
 
 % --------------------------------------------------------------------------------
 % Dedicatória

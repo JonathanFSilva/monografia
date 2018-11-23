@@ -1,66 +1,120 @@
 \chapter{Revisão de Literatura}
-Esta seção apresentará os principais conceitos envolvidos na realização do trabalho como Cultivo em Ambiente Protegido, IoT, RSSF e também as tecnologias empregadas no desenvolvimento do trabalho, como sensores e atuadores.
+Esta seção apresentará os principais conceitos envolvidos na realização do trabalho como Cultivo em Ambiente Protegido, Internet das Coisas, Rede de Sensores sem fio e também as tecnologias empregadas no desenvolvimento do trabalho, como sensores e atuadores.
+
 
 \section{Cultivo em Ambiente Protegido}
-Os fatores climáticos são uma das maiores preocupações do produtor, intempéries climáticas como geadas, excesso de chuvas, etc, prejudicam tanto a qualidade quanto o rendimento da produção. Para se contornar esses fatores uma alternativa a se considerar é o cultivo em ambientes protegidos, esta técnica possibilita um certo controle sobre as condições climáticas como temperatura, umidade do ar, etc \cite{silva2014cultivoprotegido}.
+Os fatores climáticos são uma das preocupações do produtor, intempéries climáticas como geadas, excesso de chuvas, etc, prejudicam tanto a qualidade quanto o rendimento da produção. Para se contornar esses fatores uma alternativa a se considerar é o cultivo em ambientes protegidos, esta técnica consiste na construção de estruturas para proteção das plantas contra os agentes meteorológicos  \cite{silva2014cultivoprotegido}.
 
-A forma de cultivo protegido mais conhecida é aquela realizado nas estufas, mas também pode ser efetuado por meio de túneis, ripados, etc.
-
-\subsection{Nebulizador}
-
-A nebulização, que é uma técnica que consiste na emissão de uma névoa de micro gotas de água, é indicado para climatização de ambientes onde se necessite o aumento da umidade relativa do ar e/ou abaixamento da temperatura em áreas de cultivo sob ambiente protegido, tais como viveiros e estufas. 
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{04-figuras/nebulizador.jpg}
-\begingroup
-\caption{Sistema nebulizador}
-\vspace{-\baselineskip}
-\fonte{\url{https://www.growshop.com.br/media/wysiwyg/Close_Jato_NA-1_1.jpg}}
-\label{fig:nebulizador}
-\endgroup
-\end{figure}
-
-A nebulização também é utilizada na conservação de flores, estábulos, granjas, balcões de verduras em supermercados, entre outros. O controle do clima ou microclima nas estufas é baseado no princípio da troca de energia entre o ar e a água nebulizada, onde uma caloria representa a quantidade de calor necessária para aumentar em 1 °C a temperatura de 1 cm³ de água.
-
-Em um sistema de nebulização eficiente pode se reduzir de 4 ºC a 6 ºC a temperatura na estufa, em relação às condições externas, ou seja, temperatura e umidade externa. A figura \ref{fig:nebulizador} mostra um sistema nebulizador.
-
-\subsection{Setor de Fruticultura do campus Muzambinho}
-
-No setor de fruticultura do IFSULDEMINAS campus Muzambinho é realizado o cultivo de mudas por estaquia. Esse cultivo é realizado em ambiente de cultivo protegido, como mostra a figura \ref{fig:fruticultura}. Este ambiente conta com um sistema de nebulizador responsável por controlar a temperatura e umidade do ar dentro do ambiente protegido.
-
-O sistema nebulizador existente no setor é controlado por meio de um Arduino que efetua o acionamento de forma programada a cada 10 minutos.
+A forma de cultivo protegido mais conhecida é aquela realizado nas estufas (Figura \ref{fig:estufa}), mas também pode ser efetuado por meio de túneis (Figura \ref{fig:tunel}), etc.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=1]{04-figuras/fruticultura.png}
-    \caption{Setor de fruticultura campus Muzambinho}
+    \includegraphics[scale=0.1]{04-figuras/estufa.jpg}
+    \caption{Cultivo protegido em estufa.}
     \vspace{-\baselineskip}
-    \fonte{Setor de Fruticultura do campus Muzambinho}
+    \fonte{Do Autor (2018).}
+    \label{fig:estufa}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.1]{04-figuras/tunel.jpg}
+    \caption{Cultivo protegido em túnel.}
+    \vspace{-\baselineskip}
+    \fonte{Do Autor (2018).}
+    \label{fig:tunel}
+\end{figure}
+
+Além de proporcionar um certo controle sobre as condições climáticas, os ambientes protegidos também possibilitam o cultivo em épocas que normalmente não seriam escolhidas para a produção ao
+ar livre, além de também trazerem benefícios em relação ao consumo de água \cite{purquerio2006ambiente_protegido}.
+
+
+\subsection{Nebulizador}
+A nebulização é uma técnica que consiste na emissão de uma névoa de micro gotas de água. Esta técnica é indicada para climatização de ambientes onde se necessite manter a umidade relativa do ar alta e/ou a temperatura baixa.
+
+Esta técnica é comumente empregada em áreas de cultivo protegido como viveiros e estufas, mas também é utilizada na conservação de flores, estábulos, granjas, balcões de verduras em supermercados, entre outros. O controle do clima ou microclima nas estufas é baseado no princípio da troca de energia entre o ar e a água nebulizada, onde uma caloria representa a quantidade de calor necessária para aumentar em 1 °C a temperatura de 1 cm³ de água.
+
+Em um sistema de nebulização eficiente pode se reduzir de 4 ºC a 6 ºC a temperatura na estufa, em relação às condições externas, ou seja, temperatura e umidade externa. A Figura \ref{fig:nebulizador} mostra um sistema nebulizador.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.55]{04-figuras/nebulizacion_1.jpg}
+    \caption{Sistema nebulizador.}
+    \vspace{-\baselineskip}
+    \fonte{\citeonline{ruben2014nebulizacao}.}
+    \label{fig:nebulizador}
+\end{figure}
+
+
+\subsection{Setor de Fruticultura do campus Muzambinho}
+No setor de fruticultura do IFSULDEMINAS campus Muzambinho é realizado o cultivo de mudas por estaquia. Esse cultivo é realizado em ambiente de cultivo protegido, como mostra a Figura \ref{fig:fruticultura}. Este ambiente conta com um sistema de nebulizador responsável por controlar a temperatura e umidade do ar dentro do ambiente protegido.
+
+O sistema nebulizador existente no setor é controlado por meio de um Arduino\footnote[1]{Para mais informações sobre a plataforma Arduino acesse: \url{https://www.arduino.cc/}} que efetua o seu acionamento de forma programada a cada 10 minutos, permanecendo ativado pelo período de 10 segundos.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.1]{04-figuras/fruticultura.jpg}
+    \caption{Setor de fruticultura campus Muzambinho.}
+    \vspace{-\baselineskip}
+    \fonte{Do Autor (2018).}
     \label{fig:fruticultura}
 \end{figure}
 
-\section{Internet das Coisas}
 
-A Internet das Coisas (IoT, do inglês Internet of Things) vem se tornando algo comum em sociedade e visa conectar a vida cotidiana a objetos que possuem a internet como meio de comunicação. Essa interconexão de dispositivos na internet possibilita a comunicação dos mesmos com humanos ou até com outros dispositivos conectados \cite{leandro2017}.
+\section{Internet das Coisas}
+A Internet das Coisas (IoT, do inglês \textit{Internet of Things}) é um conceito que vem se tornando cada vez mais comum no nosso dia-a-dia e visa conectar a vida cotidiana a objetos que possuem a internet como meio de comunicação. Essa interconexão de dispositivos na internet possibilita a comunicação dos mesmos com humanos ou até com outros dispositivos conectados \cite{leandro2017}.
 
 \subsection{Rede de Sensores sem Fio}
-
 Nos últimos anos, devido ao avanço tecnológico na área de sensores e comunicação sem fio, houve a criação das Redes de Sensores sem Fio (RSSF). Este tipo de rede pode atuar em diferentes atividades, como monitoramento, rastreamento, entre outras.
 
-As redes de sensores sem fio se diferem das redes convencionais por serem compostas por diversos nos distribuídos além de possuir limitação quanto ao alcance e energia. Cada nó da rede é composto por diversos sensores tais como temperatura, infravermelho, pressão, etc, e esses nós podem ser organizados como \textit{clusters} onde pelo menos um nós seja capaz de detectar algum evento na região e comunicar este evento aos demais nós conectados na rede \cite{loureiro2003redes}.
+As redes de sensores sem fio se diferem das redes convencionais por serem compostas por diversos nos distribuídos além de possuir limitação quanto ao seu alcance e consumo de energia. Cada nó da rede é composto por diversos sensores tais como temperatura, infravermelho, pressão, etc, e esses nós podem ser organizados como \textit{clusters} onde pelo menos um nós seja capaz de detectar algum evento na região e comunicar este evento aos demais nós conectados na rede \cite{loureiro2003redes}.
 
-\citeonline{rocha2007rede}, afirma que essas são algumas características que podem influenciar no projeto de uma rede de sensores sem fio:
+Segundo \citeonline{rocha2007rede}, essas são algumas características que podem influenciar no projeto de uma rede de sensores sem fio:
 
-\begin{itemize}[itemsep=0em]
+\begin{itemize}
     \item Tolerância a falhas: os sensores que compõem os nós são muito pequenos, o que contribui ao fato de eles serem pouco confiáveis, fazendo com que a rede tenha que ser tolerante a falhas. O nível de tolerância de falhas vai depender de cada aplicação. 
     \item Escalabilidade: o fato de os nós serem compostos por equipamentos de baixo custo e tamanho pequeno contribui para a criação de redes de alta escala, necessitando de poucos cuidados e baixo custo de instalação.
     \item Consumo de energia: a energia é um fator crucial em uma rede de sensores sem fio pois as fontes de energia são escassas. Dessa forma os nós devem usar a energia de forma eficiente, ficando "adormecidos" durante os períodos em que não forem necessários.
 \end{itemize}
 
-\section{Protocolo MQTT}
+\section{Protocolo MQTT} \label{sec:mqtt}
+\textit{Message Queue Telemetry Transport} (MQTT) é um protocolo para troca de mensagens baseado na pilha TCP/IP. Este protocolo foi desenvolvido na década de 90 pela IBM e Eurotech \cite{basilio2018mqtt}.
 
-\textit{Message Queue Telemetry Transport} (MQTT), este protocolo foi desenvolvido pela IBM no final dos anos 90. 
+Este protocolo permite que a comunicação seja realizada de forma assíncrona entre as partes, desacoplando o emissor e o receptor tanto no espaço quanto no tempo, o que o torna escalável em ambientes de rede que não são confiáveis \cite{yuan2017mqtt}.
+
+Neste protocolo exitem dois tipos de entidades: um \textit{message broker}, que é um servidor responsável por receber as mensagems e entregar para seus destinos, e diversos clientes, que são os dispositivos que estão interagindo com o \textit{broker}, recebendo ou enviando mensagens. 
+
+O MQTT é baseado no princípio de publicação e assinatura e as mensagens são organizadas em forma de tópicos. Quando um cliente se conecta ao \textit{broker}, ele poderá assinar qualquer tópico de mensagem, desta forma, ele irá interagir apenas com as mensagens publicadas no tópico assinado, ou até mesmo publicar alguma mensagem em um tópico específico com a garantia de que apenas quem assina este tópico receberá a mensagem.
+
+Na Figura \ref{fig:mqtt} podemos observar um exemplo do modelo de publicação e assinatura do protocolo MQTT, onde os sensores irão publicar no tópico "sensor\_data" e irão assinar o tópico "config\_change". Do outro lado temos os aplicativos de processamento de dados e armazenamento que assinarão o tópico "sensor\_data", desta forma eles irão receber todas as leituras realizadas pelos sensores. E temos ainda um aplicativo de console administrativo que poderia receber comandos do administrador e publicar essas mudanças no tópico "config\_change"\hspace{0.2cm}\cite{yuan2017mqtt}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.95]{04-figuras/mqtt.png}
+\caption{O modelo de publicação e assinatura do MQTT.}
+\vspace{-\baselineskip}
+\fonte{\citeonline{yuan2017mqtt}}
+\label{fig:mqtt}
+\end{figure}
+
+O protocolo MQTT ainda nos fornece 3 opções de qualidade de serviço (QoS, do inglês \textit{Quality of Service}), variando a garantia de entrega de cada um:
+
+\begin{itemize}
+    \item \textbf{QoS 0 - Entrega no máximo uma vez:} Este é o nível mais baixo de QoS permitido no MQTT. Com esta configuração, as mensagens serão enviadas no máximo uma vez, podendo não serem entregues.
+    
+    \item \textbf{QoS 1 - Entrega pelo menos uma vez:} Com esta configuração você possui a garantia de que a mensagem será entregue pelo menos uma vez, podendo acontecer de se ter mensagens duplicadas.
+    
+    \item \textbf{QoS 2 - Entrega no máximo uma vez:} Este é o nível mais alto de QoS. Ele assegura que as mensagens duplicadas não serão entregues, a mensagem é entregue uma vez e somente uma vez quando este nível de QoS é usado.
+\end{itemize}
 
 
 \section{Microcontrolador}
@@ -68,8 +122,7 @@ As redes de sensores sem fio se diferem das redes convencionais por serem compos
 Microcontroladores são dispositivos eletrônicos que possuem basicamente um microprocessador, memória e interfaces de entrada e saída. Estes dispositivos podem ser programados utilizando alguma linguagem de programação compatível, além de também poder trabalhar com diversos periféricos. Dito de outra forma
 
 \begin{citacao}
-	Microcontroladores são computadores de propósito específico. Eles possuem 
-tamanho reduzido, baixo custo e baixo consumo de energia. Devido a esses fatores há diversos segmentos, que os utilizam, tais como a indústria automobilística, de telecomunicações, de brinquedos, de eletrodomésticos, de eletroeletrônicos, bélica [\ldots]. \cite{silva2009}  
+	Microcontroladores são computadores de propósito específico. Eles possuem tamanho reduzido, baixo custo e baixo consumo de energia. Devido a esses fatores há diversos segmentos, que os utilizam, tais como a indústria automobilística, de telecomunicações, de brinquedos, de eletrodomésticos, de eletroeletrônicos, bélica [\ldots]. \cite{silva2009}  
 \end{citacao}
 
 De acordo com \citeonline[p.~15]{martins2005microcontroladores}, exitem diversos tipos de microcontroladores, sendo diferenciados por características como: a velocidade de processamento, a quantidade de memória disponível para armazenar dados e instruções, a quantidade de pinos de entrada e saída, entre outras.
@@ -83,7 +136,7 @@ A tabela \ref{tab:esp8266} mostra as especificações técnicas do ESP8266:
 
 \begin{table}[H]
 \centering
-\caption{Especificações técnicas do ESP8266}
+\caption{Especificações técnicas do ESP8266.}
 \begin{tabular}{c|c}
 \hline
 Voltagem 						& 3.3V 					\\\hline
@@ -98,7 +151,7 @@ Suporte 802.11 					& b/g/n/d/e/i/k/r		\\\hline
 Máxima corrente de conexão TCP	& 5						\\\hline
 \end{tabular}
 \label{tab:esp8266}
-\fonte{\cite[p.27]{kolban2015espbook}}
+\fonte{\citeonline[p.27]{kolban2015espbook}.}
 \end{table}
 
 
@@ -110,18 +163,18 @@ Este módulo possui mais entradas e saídas, o que possibilita a leitura de vár
 \centering
 \includegraphics[scale=1]{./04-figuras/esp-12.png}
 \begingroup
-\caption{GPIOs do ESP-12}
+\caption{GPIOs do ESP-12.}
 \vspace{-\baselineskip}
 \label{fig:esp12-gpios}
-\fonte{\cite[p.29]{kolban2015espbook}}
+\fonte{\citeonline[p.29]{kolban2015espbook}.}
 \endgroup
 \end{figure}
 
-A figura \ref{fig:esp12-gpios} mostra o posicionamento de cada um dos pinos no ESP-12, as especificações e particularidades de cada um deles é apresentado na tabela \ref{tab:esp12-especificacoes}.
+A Figura \ref{fig:esp12-gpios} mostra o posicionamento de cada um dos pinos no ESP-12, as especificações e particularidades de cada um deles é apresentado na tabela \ref{tab:esp12-especificacoes}.
 
 \begin{table}[H]
 \centering
-\caption{Especificações dos GPIOs}
+\caption{Especificações dos GPIOs.}
 \label{tab:esp12-especificacoes}
 \begin{tabular}{l|l}
 \hline
@@ -143,13 +196,13 @@ GPIO 2                              & Deve estar em nível lógico 1 para inicia
 GPIO 15                             & \begin{tabular}[c]{@{}l@{}}Deve estar em nível lógico 0 para carregar o programa (flash mode)\\ e para inicialização do programa (boot mode)\end{tabular}   \\ \hline
 GND                                 & Terra                                                                                                                                                       \\ \hline
 \end{tabular}
-\fonte{\cite[p.29]{kolban2015espbook}}
+\fonte{\citeonline[p.29]{kolban2015espbook}.}
 \end{table}
 
 \subsection{Plataforma NodeMCU}
 
 NodeMCU é uma plataforma \textit{Open Source} baseado no microcontrolador ESP8266. Basicamente essa plataforma é composta por um microcontrolador (ESP8266, ESP-12) e uma porta micro USB utilizada para alimentação e programação da placa. Principais características do NodeMCU:
-\begin{itemize}[itemsep=0em]
+\begin{itemize}
 \item Processador ESP8266-12E
 \item Arquitetura RISC de 32 bits
 \item Processador pode operar em 80MHz ou 160MHz
@@ -170,14 +223,14 @@ NodeMCU é uma plataforma \textit{Open Source} baseado no microcontrolador ESP82
 \item Compatível com módulos e sensores utilizados no Arduino
 \end{itemize}
 
-A figura \ref{fig:nodemcu} apresenta uma breve descrição da composição da placa:
+A Figura \ref{fig:nodemcu} apresenta uma breve descrição da composição da placa:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{./04-figuras/nodemcu.png}
-\caption{Composição do NodeMCU}
+\includegraphics[scale=0.6]{./04-figuras/nodemcu.png}
+\caption{Composição do NodeMCU.}
 \vspace{-\baselineskip}
-\fonte{https://goo.gl/VAK2kx}
+\fonte{\citeonline{oliveira2016blog_nodemcu}.}
 \label{fig:nodemcu}
 \end{figure}
 
@@ -189,10 +242,10 @@ Os sensores são dispositivos que respondem a interações com o ambiente. "Este
 
 \subsection{Sensor de Temperatura e Umidade do Ar}
 
-O sensor de umidade do ar e temperatura escolhido pra utilização no desenvolvimento do trabalho foi o DHT11, representado na figura \ref{fig:dht11}, que é um sensor comercial de baixo custo. Este sensor utiliza um termistor para medição da temperatura e um sensor capacitivo para medir a umidade do ar \cite{gay2014dht11}.
+O sensor de umidade do ar e temperatura escolhido pra utilização no desenvolvimento do trabalho foi o DHT11, representado na Figura \ref{fig:dht11}, que é um sensor comercial de baixo custo. Este sensor utiliza um termistor para medição da temperatura e um sensor capacitivo para medir a umidade do ar \cite{gay2014dht11}.
 
 Características do DHT11:
-\begin{itemize}[itemsep=0em]
+\begin{itemize}
 \item Tensão de alimentação de 3V a 5V
 \item Tensão de alimentação máxima 5,5V
 \item Corrente de operação 200uA a 500mA
@@ -206,10 +259,10 @@ Características do DHT11:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{./04-figuras/sensor_DHT11.jpg}
-\caption{Sensor de umidade e temperatura}
+\includegraphics[scale=0.4]{./04-figuras/sensor_DHT11.jpg}
+\caption{Sensor de umidade e temperatura.}
 \vspace{-\baselineskip}
-\fonte{Do autor}
+\fonte{Do Autor (2018).}
 \label{fig:dht11}
 \end{figure}
 
@@ -219,55 +272,51 @@ Características do DHT11:
 Os sensores do tipo resistivo são comumente empregados para medição da duração do molhamento foliar, quando há água em sua superfície a resistência elétrica é reduzida devido a um curto-circuito proveniente da presença do líquido. Estes tipos de sensores são capazes apenas de detectar se há ou não água sobre a sua superfície, se precisarmos quantificar esse liquido será necessário a utilização de um sensor do tipo capacitivo.
 
 Os sensores do tipo capacitivo trabalham da seguinte maneira:
-\begin{itemize}[itemsep=0em]
+\begin{itemize}
 \item quando não há a presença de nenhum liquido, o seu dielétrico é apenas o ar
 \item conforme sua superfície entra em contato com algum líquido, parte do seu dielétrico se torna a água, que possui permissividade aproximadamente 80 vezes maior do que a do ar, provocando assim um aumento na capacitância. 
 \end{itemize}
 Dessa forma, ao medirmos a capacitância do sensor, poderemos estimar a quantidade de água que se encontra em sua superfície.
-A figura \ref{fig:molhamento} mostra o sensor de molhamento foliar utilizado no trabalho.
+A Figura \ref{fig:molhamento} mostra o sensor de molhamento foliar utilizado no trabalho.
 
 \begin{figure}[H]
 \centering
-\setlength\lineskip{0pt}
-\includegraphics[scale=0.3]{./04-figuras/molhamento.jpg}
-\caption{Sensor de Molhamento Foliar}
+\includegraphics[scale=0.35]{./04-figuras/molhamento.jpg}
+\caption{Sensor de Molhamento Foliar.}
 \vspace{-\baselineskip}
-\fonte{Do autor}
+\fonte{Do Autor (2018).}
 \label{fig:molhamento}
 \end{figure}
 
-\begin{comment}
-\subsection{Sensor de Luminosidade}
+% \subsection{Sensor de Luminosidade}
+% \textit{Light Dependant Resistor} (LDR) como mostra a figura \ref{fig:ldr} é um resistor cuja sua resistência varia de forma inversamente proporcional a incidência de luz, ou seja, quanto maior a iluminação menor será o valor da resistência \cite[p.114]{mcroberts2011arduinobasico}.
 
-\textit{Light Dependant Resistor} (LDR) como mostra a figura \ref{fig:ldr} é um resistor cuja sua resistência varia de forma inversamente proporcional a incidência de luz, ou seja, quanto maior a iluminação menor será o valor da resistência \cite[p.114]{mcroberts2011arduinobasico}.
+% \begin{figure}[H]
+% \centering
+% \includegraphics[scale=0.3]{./04-figuras/ldr.png}
+% \caption{Sensor de luminosidade (LDR).}
+% \vspace{-\baselineskip}
+% \fonte{Do autor (2018).}
+% \label{fig:ldr}
+% \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{./04-figuras/ldr.png}
-\caption{Sensor de luminosidade (LDR)}
-\vspace{-\baselineskip}
-\fonte{Do autor}
-\label{fig:ldr}
-\end{figure}
+% Na tabela \ref{tab:vout-ldr} podemos constatar a variação dos valores de tensão de saída (Vout), indo de mais escuro para mais claro, para um LDR com tensão de entrada (Vin) de 5V e resistência de 10k$\Omega$ como divisor de tensão.
 
-Na tabela \ref{tab:vout-ldr} podemos constatar a variação dos valores de tensão de saída (Vout), indo de mais escuro para mais claro, para um LDR com tensão de entrada (Vin) de 5V e resistência de 10k$\Omega$ como divisor de tensão.
-
-\begin{table}[H]
-\centering
-\caption{Valores de Vout (voltagem de saída) para um LDR com 5V como Vin (voltagem de entrada)}
-\begin{tabular}{c|c|c|c}
-\hline
-\textbf{R1} & \textbf{R2 (LDR)} & \textbf{Vout} & \textbf{Claridade} 	\\\hline
-10k$\Omega$ & 100k$\Omega$ 		& 4,54V 		& Mais escuro			\\\hline
-10k$\Omega$ &  73k$\Omega$ 		& 4,39V 		& 25\%					\\\hline
-10k$\Omega$ &  45k$\Omega$ 		& 4,09V 		& 50\%    				\\\hline
-10k$\Omega$ &  28k$\Omega$ 		& 3,68V 		& 75\%    				\\\hline
-10k$\Omega$ &  10k$\Omega$ 		& 2,50V 		& Mais claro    		\\\hline
-\end{tabular}
-\fonte{\citeonline[p.~119]{mcroberts2011arduinobasico}}
-\label{tab:vout-ldr}
-\end{table}
-\end{comment}
+% \begin{table}[H]
+% \centering
+% \caption{Valores de Vout (voltagem de saída) para um LDR com 5V como Vin (voltagem de entrada).}
+% \begin{tabular}{c|c|c|c}
+% \hline
+% \textbf{R1} & \textbf{R2 (LDR)} & \textbf{Vout} & \textbf{Claridade} 	\\\hline
+% 10k$\Omega$ & 100k$\Omega$ 		& 4,54V 		& Mais escuro			\\\hline
+% 10k$\Omega$ &  73k$\Omega$ 		& 4,39V 		& 25\%					\\\hline
+% 10k$\Omega$ &  45k$\Omega$ 		& 4,09V 		& 50\%    				\\\hline
+% 10k$\Omega$ &  28k$\Omega$ 		& 3,68V 		& 75\%    				\\\hline
+% 10k$\Omega$ &  10k$\Omega$ 		& 2,50V 		& Mais claro    		\\\hline
+% \end{tabular}
+% \fonte{\citeonline[p.~119]{mcroberts2011arduinobasico}.}
+% \label{tab:vout-ldr}
+% \end{table}
 
 \section{Atuadores}
 
@@ -277,14 +326,14 @@ Os atuadores são componentes que convertem energia, seja ela elétrica, hidráu
 
 Relé é uma chave eletrônica que liga ou desliga quando recebe uma tensão em seus pinos de controle. Esta chave trabalha de forma diferente das convencionais pois não depende da intervenção humana para o seu acionamento \cite[p.28]{ribeiro1999automaccao}.
 
-A figura \ref{fig:rele} representa a estrutura interna de um relé:
+A Figura \ref{fig:rele} representa a estrutura interna de um relé:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{./04-figuras/reles.jpg}
-\caption{Estrutura interna do rele}
+\includegraphics[scale=0.4]{./04-figuras/reles.jpg}
+\caption{Estrutura interna do rele.}
 \vspace{-\baselineskip}
-\fonte{http://www.areatecnologia.com/electricidadrele.html}
+\fonte{Area Tecnologia (2012).}
 \label{fig:rele}
 \end{figure}
 
@@ -297,11 +346,11 @@ A figura \ref{fig:rele} representa a estrutura interna de um relé:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{./04-figuras/rele-exemplo.png}
-\caption{Exemplo de ligação do rele com o Arduino}
+\includegraphics[scale=0.7]{./04-figuras/rele-node.png}
+\caption{Exemplo de ligação do rele com o NodeMCU.}
 \vspace{-\baselineskip}
-\fonte{https://www.robocore.net/tutoriais/modulo-rele-arduino.html}
+\fonte{Do Autor (2018).}
 \label{fig:releligacao}
 \end{figure}
 
-A figura \ref{fig:releligacao} nos mostra um exemplo de ligação de um rele à plataforma Arduino, este rele está sendo utilizado para acionar uma lâmpada. Como podemos ver, esta lâmpada está conectada a uma fonte de energia externa, o papel do rele é trabalhar como uma chave que, ao receber uma tensão enviada pelo Arduino, permite a passagem da corrente, que vem da fonte externa, para a lâmpada.
+A Figura \ref{fig:releligacao} nos mostra um exemplo de ligação de um rele à plataforma NodeMCU, este rele está sendo utilizado para acionar uma lâmpada. O papel do rele é trabalhar como uma chave que, ao receber uma tensão enviada pelo NodeMCU, permite a passagem da corrente, que vem de uma fonte externa, para a lâmpada.
